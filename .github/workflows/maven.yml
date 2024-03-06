@@ -46,9 +46,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-  #    - uses: actions/download-artifact@v3
-  #      with:
-  #        name: buildArtifact
+     - uses: actions/download-artifact@v3
+       with:
+         name: buildArtifact
      - name: Production Deployment
        run: |
           ls -lart 
