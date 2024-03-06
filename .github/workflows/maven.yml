@@ -51,6 +51,7 @@ jobs:
          name: buildArtifact
      - name: Production Deployment
        run: |
+          mv java-example.war Vasu.war
           ls -lart 
      - name: scp ssh pipelines
        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
@@ -61,7 +62,7 @@ jobs:
          user: ${{ secrets.DC_USER }}
          pass: ${{ secrets.DC_KEY }}
          scp: |
-          ./*.war => /tmp/Vasu.war
+          ./*.war => /tmp/
          last_ssh: |
             sudo cp /tmp/Vasu.war /var/lib/tomcat9/webapps/Vasu.war
             ls -la
