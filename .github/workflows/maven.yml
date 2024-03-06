@@ -61,7 +61,7 @@ jobs:
          user: ${{ secrets.DC_USER }}
          pass: ${{ secrets.DC_KEY }}
          scp: |
-          ./*.war => /tmp/
+          ./*.war => /tmp/Vasu.war
          last_ssh: |
-            sudo cp /tmp/*.war /var/lib/tomcat9/webapps/Vasu.war
+            sudo cp /tmp/Vasu.war /var/lib/tomcat9/webapps/Vasu.war
             ls -la
