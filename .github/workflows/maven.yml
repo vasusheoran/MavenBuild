@@ -19,12 +19,12 @@ env:
   mavenGoal: "clean install"
   
 jobs:
-  call-build-in-GithubActions-repo:
+  build:
     uses: vasusheoran/GithubActions/.github/workflows/build.yml@main
     with:
       build-script: pom.xml
-  call-deploy-in-GithubActions-repo:
-    needs: call-build-in-GithubActions-repo
+  deploy:
+    needs: build
     uses: vasusheoran/GithubActions/.github/workflows/deploy.yml@main
     secrets:
        host: ${{ secrets.DC_HOST }}
