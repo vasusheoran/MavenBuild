@@ -19,4 +19,9 @@ env:
   mavenGoal: "clean install"
 jobs:
   call-checkout-in-GithubActions-repo:
+    uses: vasusheoran/GithubActions/.github/workflows/checkout.yml@main
+  call-build-in-GithubActions-repo:
+    uses: vasusheoran/GithubActions/.github/workflows/maven-build.yml@main
+  call-deploy-in-GithubActions-repo:
+    needs: call-build-in-GithubActions-repo
     uses: vasusheoran/GithubActions/.github/workflows/deploy.yml@main
