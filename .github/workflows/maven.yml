@@ -17,6 +17,7 @@ on:
 
 env:
   mavenGoal: "clean install"
+  
 jobs:
   call-checkout-in-GithubActions-repo:
     uses: vasusheoran/GithubActions/.github/workflows/checkout.yml@main
