@@ -22,6 +22,7 @@ jobs:
   call-checkout-in-GithubActions-repo:
     uses: vasusheoran/GithubActions/.github/workflows/checkout.yml@main
   call-build-in-GithubActions-repo:
+    needs: call-checkout-in-GithubActions-repo
     uses: vasusheoran/GithubActions/.github/workflows/build.yml@main
   call-deploy-in-GithubActions-repo:
     needs: call-build-in-GithubActions-repo
